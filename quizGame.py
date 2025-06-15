@@ -58,7 +58,7 @@ if answer4 == "b":
     print("Correct!")
     correct += 1
 else:
-    print("Incorrect. The correct answer is (a) Solid State Drive.")
+    print("Incorrect. The correct answer is (b) Solid State Drive.")
     incorrect += 1
 
 # Question 5
