@@ -4,7 +4,7 @@ print("Welcome to the Number Guessing Game!")
 startAttempts = 0  # Number of attempts to start the game
 
 while True:
-    rangeMax = input("Select a positive number: ")
+    rangeMax = input("Enter a positive number: ")
     startAttempts += 1
 
     if rangeMax.isdigit():
