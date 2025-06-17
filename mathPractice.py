@@ -59,15 +59,15 @@ print(f"You have chosen the {['Easy', 'Medium', 'Hard'][int(difficulty) - 1]} le
 INCORRECT = 0
 CORRECT = 0
 
-input("Press Enter to start the quiz!")
+input("Press any key to start the quiz!")
 print("------------------------------")
 
 START = time.time()
 
 for i in range(QUESTIONS):
     eq, ans = equationGenerator(MIN, MAX)
-    userAnswer = input(f"Question {i + 1}: What is {eq}? ")
-    if userAnswer.isdigit() or (userAnswer.startswith('-') and userAnswer[1:].isdigit()):
+    userAnswer = input(f"Question {i + 1}: What is {eq}?\nYour answer: ")
+    if userAnswer.lstrip('+-').isdigit():
         userAnswer = int(userAnswer)
         if userAnswer == ans:
             print("Correct!")
