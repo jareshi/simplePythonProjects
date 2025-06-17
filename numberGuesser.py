@@ -1,4 +1,4 @@
-# This is a simple number guessing game where the user has to guess a randomly selected number within a specified range.
+"""This is a simple number guessing game where the user has to guess a randomly selected number within a specified range."""
 
 import random
 
