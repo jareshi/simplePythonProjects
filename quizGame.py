@@ -1,3 +1,5 @@
+"""This is a simple quiz game in Python that tests the user's knowledge about computers."""
+
 print("Welcome to the Python Quiz Game!")
 startAttempts = 0 # Number of attempts to start the game
 
