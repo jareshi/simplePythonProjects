@@ -35,13 +35,6 @@ def generate_password(length, use_uppercase = True, use_digits = True, use_speci
 
     return pwd
 
-userLength = input("Enter the desired password length (minimum 8 characters): ")
-while not userLength.isdigit() or int(userLength) < 8:
-    print("Invalid input. Please enter a number greater than or equal to 8.")
-    userLength = input("Enter the desired password length (minimum 8 characters): ")
-
-userLength = int(userLength)
-
 def get_yes_no(prompt):
     """Prompt the user until a valid yes/no response is entered."""
     while True:
@@ -53,11 +46,18 @@ def get_yes_no(prompt):
         else:
             print("Invalid input. Please enter '[Y]es' or '[N]o'.")
 
-useUppercase = get_yes_no("Include uppercase letters? ([Y]es/[N]o): ")
-useDigits = get_yes_no("Include digits? ([Y]es/[N]o): ")
-useSpecialChars = get_yes_no("Include special characters? ([Y]es/[N]o): ")
+userLength = input("Enter the desired password length (minimum 8 characters): ")
+while not userLength.isdigit() or int(userLength) < 8:
+    print("Invalid input. Please enter a number greater than or equal to 8.")
+    userLength = input("Enter the desired password length (minimum 8 characters): ")
 
-print(f"Your generated password is: {generate_password(userLength, useUppercase, useDigits, useSpecialChars)}")
+userLength = int(userLength)
+
+UPPER = get_yes_no("Include uppercase letters? ([Y]es/[N]o): ")
+DIGIT = get_yes_no("Include digits? ([Y]es/[N]o): ")
+SPEC = get_yes_no("Include special characters? ([Y]es/[N]o): ")
+
+print(f"Your generated password is: {generate_password(userLength, UPPER, DIGIT, SPEC)}")
 print("Thank you for using the Password Generator program!")
 
 # JHAP
