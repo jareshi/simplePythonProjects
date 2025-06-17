@@ -42,9 +42,20 @@ while not userLength.isdigit() or int(userLength) < 8:
 
 userLength = int(userLength)
 
-useUppercase = input("Include uppercase letters? ([Y]es/[N]o): ").strip().lower() in ('yes', 'y')
-useDigits = input("Include digits? ([Y]es/[N]o): ").strip().lower() in ('yes', 'y')
-useSpecialChars = input("Include special characters? ([Y]es/[N]o): ").strip().lower() in ('yes', 'y')
+def get_yes_no(prompt):
+    """Prompt the user until a valid yes/no response is entered."""
+    while True:
+        response = input(prompt).strip().lower()
+        if response in ('yes', 'y'):
+            return True
+        elif response in ('no', 'n'):
+            return False
+        else:
+            print("Invalid input. Please enter '[Y]es' or '[N]o'.")
+
+useUppercase = get_yes_no("Include uppercase letters? ([Y]es/[N]o): ")
+useDigits = get_yes_no("Include digits? ([Y]es/[N]o): ")
+useSpecialChars = get_yes_no("Include special characters? ([Y]es/[N]o): ")
 
 print(f"Your generated password is: {generate_password(userLength, useUppercase, useDigits, useSpecialChars)}")
 print("Thank you for using the Password Generator program!")
